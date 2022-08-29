@@ -1,0 +1,81 @@
+# Spring Cloud Gateway server port
+server:
+  port: 7071
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, prometheus, health
+spring:
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 10000
+        response-timeout: 60s
+        pool:
+          max-idle-time: 20
+      metrics:
+        enabled: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+  pid:
+    file: ${instance.pid}
+---
+spring:
+  config:
+    import: classpath:aws-properties.yml
+    activate:
+      on-profile: local
+logging:
+  config: classpath:logback-spring-${spring.profiles.active}.xml
+sites:
+  mgw-url: https://mgw.bithumbcorp.com
+  recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+---
+spring:
+  config:
+    import: classpath:aws-properties-eks-dev.yml
+    activate:
+      on-profile: eks-dev
+logging:
+  config: classpath:logback-spring-${spring.profiles.active}.xml
+sites:
+  mgw-url: https://mgw.bithumbcorp.com
+  recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+---
+spring:
+  config:
+    import: classpath:aws-properties-dev.yml
+    activate:
+      on-profile: dev
+logging:
+  config: classpath:logback-spring-${spring.profiles.active}.xml
+sites:
+  mgw-url: https://mgw.bithumbcorp.com
+  recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+---
+spring:
+  config:
+    import: classpath:aws-properties-qa.yml
+    activate:
+      on-profile: qa
+logging:
+  config: classpath:logback-spring-${spring.profiles.active}.xml
+sites:
+  mgw-url: https://mgw.bithumbcorp.com
+  recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+---
+spring:
+  config:
+    import: classpath:aws-properties.yml
+    activate:
+      on-profile: prod
+logging:
+  config: classpath:logback-spring-${spring.profiles.active}.xml
+sites:
+  mgw-url: https://mgw.bithumbcorp.com
+  recaptcha-url: https://www.google.com/recaptcha/api/siteverify

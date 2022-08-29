@@ -1,0 +1,18 @@
+cloud:
+  aws:
+    credentials:
+      profile-name: ${aws.default.profile:dev}
+      instanceProfile: true
+    stack:
+      auto: ${aws.stack.auto:false}
+    ssm:
+      endpoint: https://vpce-070145c4242d28466-s63o0xw2.ssm.ap-northeast-2.vpce.amazonaws.com
+    region:
+      static: ${aws.region:ap-northeast-2}
+      auto: ${aws.region.auto:false}
+    param-store:
+      enabled: true
+      fail-fast: true
+      prefix: /smartadmin
+      kms-name: kms
+      message-name: message

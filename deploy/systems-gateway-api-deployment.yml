@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-admin-listener-api
+  namespace: NAMESPACE
+  labels:
+    app: smart-admin-listener-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: smart-admin-listener-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: smart-admin-listener-api
+    spec:
+      containers:
+        - name: smart-admin-listener-api
+          image: AWS_ECR_URI
+          ports:
+            - containerPort: 7070
+          resources: {}
