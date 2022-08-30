@@ -19,12 +19,8 @@ public class AwsProperties {
   @Value("${cloud.aws.param-store.prefix}")
   private String prefix;
 
-  @Value("${cloud.aws.param-store.kms-name}")
-  private String paramStoreKmsName;
-
   @Value("${cloud.aws.param-store.message-name}")
   private String paramStoreMessageName;
 
   private String sqlUrl;
-  private String kmsKey;
 }

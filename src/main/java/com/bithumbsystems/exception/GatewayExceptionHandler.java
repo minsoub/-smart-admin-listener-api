@@ -20,7 +20,7 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
     public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
         log.warn("in GATEWAY Exception handler : " + ex);
         ErrorData errorData;
-        int errorCode = -1;
+        int errorCode;
         String errorMessage;
 
         if (ex.getClass() == GatewayException.class) {
@@ -32,7 +32,7 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
             try {
                 String err = ex.getMessage();
                 String[] arr = err.split(" ");  //ex) "504 GATEWAY_TIMEOUT" 형식. 공백으로 분리
-                errorCode = Integer.valueOf(arr[0]);
+                errorCode = Integer.parseInt(arr[0]);
                 errorMessage = arr[1];
                 errorData = ErrorData.builder().code(errorCode).message(errorMessage).build();
             }catch(RuntimeException e){
@@ -51,20 +51,7 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
         }
         DataBuffer buffer = exchange.getResponse().bufferFactory().wrap(bytes);
         if(ex.getClass() == GatewayStatusException.class) {
-            if (errorCode == ErrorCode.EXPIRED_TOKEN.getCode())
-                exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            else
-                exchange.getResponse().setRawStatusCode(errorData.getCode());
-        }else if(ex.getClass() == GatewayException.class) {
-            try {
-                if (errorCode == ErrorCode.EXPIRED_TOKEN.getCode())
-                    exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-                else
-                    exchange.getResponse().setStatusCode(HttpStatus.BAD_REQUEST);
-            } catch (Exception e) {
-                log.debug(e);
-                exchange.getResponse().setStatusCode(HttpStatus.BAD_REQUEST);
-            }
+            exchange.getResponse().setRawStatusCode(errorData.getCode());
         }else {
             exchange.getResponse().setStatusCode(HttpStatus.BAD_REQUEST);
         }

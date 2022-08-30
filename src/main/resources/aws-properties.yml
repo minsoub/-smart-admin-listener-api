@@ -13,5 +13,4 @@ cloud:
       enabled: true
       fail-fast: true
       prefix: /smartadmin
-      kms-name: kms
       message-name: message

@@ -1,5 +1,5 @@
 ## **프로젝트 소개**
-- 외부 url 호출용 gateway
+- 외부 url 호출 listener gateway
 
 ## **기술 스택 소개**
 - Java version : JDK 13

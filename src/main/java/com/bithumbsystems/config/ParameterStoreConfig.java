@@ -39,13 +39,11 @@ public class ParameterStoreConfig {
             .endpointOverride(URI.create(awsProperties.getSsmEndPoint()))
             .build();
 
-        // KMS Parameter Key
-        this.awsProperties.setKmsKey(getParameterValue(awsProperties.getParamStoreKmsName().trim(), GlobalConstant.KMS_ALIAS_NAME));
-        this.awsProperties.setSqlUrl(getParameterValue(awsProperties.getParamStoreMessageName().trim(), SQS_URL));
+        this.awsProperties.setSqlUrl(getParameterValue(awsProperties.getParamStoreMessageName().trim()));
     }
 
-    protected String getParameterValue(String storeName, String type) {
-        String parameterName = String.format("%s/%s_%s/%s", awsProperties.getPrefix(), storeName, profileName, type);
+    protected String getParameterValue(String storeName) {
+        String parameterName = String.format("%s/%s_%s%s", awsProperties.getPrefix(), storeName, profileName, SQS_URL);
 
         GetParameterRequest request = GetParameterRequest.builder()
             .name(parameterName)
