@@ -27,7 +27,6 @@ spring:
 ---
 spring:
   config:
-    import: classpath:aws-properties.yml
     activate:
       on-profile: local
 logging:
@@ -38,7 +37,6 @@ sites:
 ---
 spring:
   config:
-    import: classpath:aws-properties-eks-dev.yml
     activate:
       on-profile: eks-dev
 logging:
@@ -49,7 +47,6 @@ sites:
 ---
 spring:
   config:
-    import: classpath:aws-properties-dev.yml
     activate:
       on-profile: dev
 logging:
@@ -60,7 +57,6 @@ sites:
 ---
 spring:
   config:
-    import: classpath:aws-properties-qa.yml
     activate:
       on-profile: qa
 logging:
@@ -71,7 +67,6 @@ sites:
 ---
 spring:
   config:
-    import: classpath:aws-properties.yml
     activate:
       on-profile: prod
 logging:
