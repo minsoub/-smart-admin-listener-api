@@ -11,5 +11,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationPropertiesScan
 public class UrlProperties {
     private String recaptchaUrl;
-    private String mgwUrl;
+    private String messengerUrl;
+    private String telegramUrl;
 }

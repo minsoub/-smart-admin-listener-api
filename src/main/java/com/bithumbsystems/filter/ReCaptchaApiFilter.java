@@ -2,17 +2,14 @@ package com.bithumbsystems.filter;
 
 import com.bithumbsystems.config.Config;
 import com.bithumbsystems.exception.GatewayException;
-import com.bithumbsystems.exception.GatewayExceptionHandler;
 import com.bithumbsystems.model.enums.ErrorCode;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import java.net.URI;
 import java.util.concurrent.atomic.AtomicReference;
@@ -28,20 +25,11 @@ public class ReCaptchaApiFilter extends AbstractGatewayFilterFactory<Config> {
     super(Config.class);
   }
 
-  @Bean
-  public ErrorWebExceptionHandler exceptionHandler() {
-    return new GatewayExceptionHandler();
-  }
-
   @Override
   public GatewayFilter apply(final Config config) {
     return (exchange, chain) -> {
       log.info("ApiFilter called...");
       log.info("ApiFilter baseMessage: {}", config.getBaseMessage());
-
-      if (config.isPreLogger()) {
-        log.info("ApiFilter Start: {}", exchange.getRequest());
-      }
 
       ServerHttpRequest request = exchange.getRequest();
       log.debug("header => {}", request.getHeaders());

@@ -32,8 +32,9 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  mgw-url: https://mgw.bithumbcorp.com
+  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+  telegram-url: https://api.telegram.org
 ---
 spring:
   config:
@@ -42,8 +43,9 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  mgw-url: https://mgw.bithumbcorp.com
+  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+  telegram-url: https://api.telegram.org
 ---
 spring:
   config:
@@ -52,8 +54,9 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  mgw-url: https://mgw.bithumbcorp.com
+  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+  telegram-url: https://api.telegram.org
 ---
 spring:
   config:
@@ -62,8 +65,9 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  mgw-url: https://mgw.bithumbcorp.com
+  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+  telegram-url: https://api.telegram.org
 ---
 spring:
   config:
@@ -72,5 +76,6 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  mgw-url: https://mgw.bithumbcorp.com
+  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+  telegram-url: https://api.telegram.org
