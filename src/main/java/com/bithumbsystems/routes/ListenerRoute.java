@@ -4,6 +4,7 @@ import com.bithumbsystems.config.Config;
 import com.bithumbsystems.config.properties.UrlProperties;
 import com.bithumbsystems.filter.MessengerApiFilter;
 import com.bithumbsystems.filter.ReCaptchaApiFilter;
+import com.bithumbsystems.filter.SlackApiFilter;
 import com.bithumbsystems.filter.TelegramApiFilter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -22,6 +23,7 @@ public class ListenerRoute {
     private final MessengerApiFilter messengerApiFilter;
 
     private final TelegramApiFilter telegramApiFilter;
+    private final SlackApiFilter slackApiFilter;
 
     @Bean
     public RouteLocator routes(RouteLocatorBuilder builder) {
@@ -40,6 +42,11 @@ public class ListenerRoute {
                         route -> route.path("/telegram/**")
                                 .filters(filter -> filter.filter(telegramApiFilter.apply(new Config("Telegram apply"))))
                                 .uri(urlProperties.getTelegramUrl())
+                )
+                .route("slack-filter",   // 텔레그램
+                        route -> route.path("/slack/**")
+                                .filters(filter -> filter.filter(slackApiFilter.apply(new Config("Slack apply"))))
+                                .uri(urlProperties.getSlackUrl())
                 )
                 .build();
     }

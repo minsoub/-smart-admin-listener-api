@@ -35,6 +35,7 @@ sites:
   messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   telegram-url: https://api.telegram.org
+  slack-url: https://hooks.slack.com
 ---
 spring:
   config:
@@ -46,6 +47,7 @@ sites:
   messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   telegram-url: https://api.telegram.org
+  slack-url: https://hooks.slack.com
 ---
 spring:
   config:
@@ -57,6 +59,7 @@ sites:
   messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   telegram-url: https://api.telegram.org
+  slack-url: https://hooks.slack.com
 ---
 spring:
   config:
@@ -68,6 +71,7 @@ sites:
   messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   telegram-url: https://api.telegram.org
+  slack-url: https://hooks.slack.com
 ---
 spring:
   config:
@@ -79,3 +83,4 @@ sites:
   messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   telegram-url: https://api.telegram.org
+  slack-url: https://hooks.slack.com

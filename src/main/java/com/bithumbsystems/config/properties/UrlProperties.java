@@ -13,4 +13,5 @@ public class UrlProperties {
     private String recaptchaUrl;
     private String messengerUrl;
     private String telegramUrl;
+    private String slackUrl;
 }
