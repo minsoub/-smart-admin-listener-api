@@ -32,9 +32,7 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
-  telegram-url: https://api.telegram.org
   slack-url: https://hooks.slack.com
 ---
 spring:
@@ -44,9 +42,7 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
-  telegram-url: https://api.telegram.org
   slack-url: https://hooks.slack.com
 ---
 spring:
@@ -56,9 +52,7 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
-  telegram-url: https://api.telegram.org
   slack-url: https://hooks.slack.com
 ---
 spring:
@@ -68,9 +62,7 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
-  telegram-url: https://api.telegram.org
   slack-url: https://hooks.slack.com
 ---
 spring:
@@ -80,7 +72,5 @@ spring:
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
 sites:
-  messenger-url: https://mgw.bithumbcorp.com
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
-  telegram-url: https://api.telegram.org
   slack-url: https://hooks.slack.com
