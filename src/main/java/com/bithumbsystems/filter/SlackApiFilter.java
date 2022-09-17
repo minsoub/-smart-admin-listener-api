@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @Component
 public class SlackApiFilter extends AbstractGatewayFilterFactory<Config> {
 
-  @Value("${sites.telegram-url}")
+  @Value("${sites.slack-url}")
   private String slackUrl;
 
   public SlackApiFilter() {
