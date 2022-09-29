@@ -28,7 +28,7 @@ public class ListenerRoute {
                                 .filters(filter -> filter.filter(reCaptchaApiFilter.apply(new Config("ReCaptcha apply"))))
                                 .uri(urlProperties.getRecaptchaUrl())
                 )
-                .route("slack-filter",   // 텔레그램
+                .route("slack-filter",   // 슬렉
                         route -> route.path("/slack/**")
                                 .filters(filter -> filter.filter(slackApiFilter.apply(new Config("Slack apply"))))
                                 .uri(urlProperties.getSlackUrl())
