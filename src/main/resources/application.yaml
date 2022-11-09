@@ -34,6 +34,9 @@ logging:
 sites:
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   slack-url: https://hooks.slack.com
+  messenger-url: https://
+  telegram-url: https://
+  xangle-url: https://pro-api.xangle.io
 ---
 spring:
   config:
@@ -44,6 +47,9 @@ logging:
 sites:
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   slack-url: https://hooks.slack.com
+  messenger-url: https://
+  telegram-url: https://
+  xangle-url: https://pro-api.xangle.io
 ---
 spring:
   config:
@@ -54,6 +60,9 @@ logging:
 sites:
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   slack-url: https://hooks.slack.com
+  messenger-url: https://
+  telegram-url: https://
+  xangle-url: https://pro-api.xangle.io
 ---
 spring:
   config:
@@ -64,6 +73,9 @@ logging:
 sites:
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   slack-url: https://hooks.slack.com
+  messenger-url: https://
+  telegram-url: https://
+  xangle-url: https://pro-api.xangle.io
 ---
 spring:
   config:
@@ -74,3 +86,6 @@ logging:
 sites:
   recaptcha-url: https://www.google.com/recaptcha/api/siteverify
   slack-url: https://hooks.slack.com
+  messenger-url: https://
+  telegram-url: https://
+  xangle-url: https://pro-api.xangle.io

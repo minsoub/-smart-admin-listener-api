@@ -14,4 +14,5 @@ public class UrlProperties {
     private String messengerUrl;
     private String telegramUrl;
     private String slackUrl;
+    private String xangleUrl;
 }
