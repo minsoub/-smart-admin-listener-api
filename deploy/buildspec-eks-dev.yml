@@ -6,7 +6,7 @@ env:
     REPO_URI: "807380035085.dkr.ecr.ap-northeast-2.amazonaws.com/smart-admin-listener-api-dev-repo"
     CONTAINER_NAME: "smart-admin-listener-api-dev-container"
     JAR_FILE_NAME: "./build/libs/smart-admin-listener-api-1.0-SNAPSHOT.jar"
-    SERVICE_ROLE: "arn:aws:iam::807380035085:role/codebuild-smart-admin-listener-api-eks-dev-build-service-role"
+    SERVICE_ROLE: "arn:aws:iam::807380035085:role/service-role/codebuild-systems-mng-api-eks-dev-build-service-role"
     KUBECTL_URL: "https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl"
     EKS_ROLE: "arn:aws:iam::807380035085:role/codebuild-eks-service-role"
     DEPLOYMENT_FILE: "./deploy/smart-admin-listener-api-deployment.yml"
