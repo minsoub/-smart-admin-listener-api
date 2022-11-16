@@ -54,6 +54,19 @@ sites:
 spring:
   config:
     activate:
+      on-profile: eks-prod
+logging:
+  config: classpath:logback-spring-${spring.profiles.active}.xml
+sites:
+  recaptcha-url: https://www.google.com/recaptcha/api/siteverify
+  slack-url: https://hooks.slack.com
+  messenger-url: https://
+  telegram-url: https://
+  xangle-url: https://pro-api.xangle.io
+---
+spring:
+  config:
+    activate:
       on-profile: dev
 logging:
   config: classpath:logback-spring-${spring.profiles.active}.xml
